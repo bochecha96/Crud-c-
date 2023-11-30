@@ -12,5 +12,6 @@ namespace ProjetoLocadora.Repository
         List<FilmeModel> ListarFilmes();
         FilmeModel BuscarId(int id);
         FilmeModel Atualizar(FilmeModel filme);
+        bool deletar(int id);
     }
 }

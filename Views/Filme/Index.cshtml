@@ -33,8 +33,8 @@
                         <td>@filme.Classificacao</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                <a role="button" asp-controller="Filme" asp-route-id="Id" asp-action="Editar" class="btn btn-primary">Editar</a>
-                                <a role="button" asp-controller="Filme" asp-action="ConfirmarDeletar" class="btn btn-danger">Remover</a>
+                                <a role="button" asp-controller="Filme" asp-route-id="@filme.Id" asp-action="Editar" class="btn btn-primary">Editar</a>
+                                <a role="button" asp-controller="Filme" asp-route-id="@filme.Id" asp-action="ApagarConfirmacao" class="btn btn-danger">Remover</a>
                             </div>
                         </td>
                     </tr>

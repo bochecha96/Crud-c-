@@ -26,9 +26,10 @@ namespace ProjetoLocadora.Controllers
             return View(filmes);
         }
 
-        public IActionResult ApagarConfirmacao()
+        public IActionResult ApagarConfirmacao(int id)
         {
-            return View();
+            var filme = _filmeRepository.BuscarId(id);
+            return View(filme);
         }
 
         public IActionResult Criar()
@@ -41,16 +42,23 @@ namespace ProjetoLocadora.Controllers
             return View(filme);
         }
 
+
         [HttpPost]
         public IActionResult Criar(FilmeModel filme)
         {
             _filmeRepository.Adicionar(filme);
             return RedirectToAction("Index");
         }
-        
+
+        [HttpPost]
         public IActionResult Atualizar(FilmeModel filme)
         {
             _filmeRepository.Atualizar(filme);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Deletar(int id){
+            _filmeRepository.deletar(id);
             return RedirectToAction("Index");
         }
     }

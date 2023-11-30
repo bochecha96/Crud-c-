@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,29 +9,34 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjetoLocadora.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header id="header-princ">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-cor1 border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                 <img src="https://tse2.mm.bing.net/th?id=OIP.m_KyEMBYsn4fhZ6Ev_qwVQAAAA&pid=Api&P=0&w=300&h=300" alt="imagem-vc" id="logo"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LocadoraMols</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <img src="https://cdn.discordapp.com/attachments/1092986584120434719/1179631363176022088/logovc-PhotoRoom.png-PhotoRoom.png?ex=657a7c51&is=65680751&hm=4df344705af4caa3446702b71364ea584a640f0ba29a30f24efc37c4cc96497a&"
+                    alt="imagem-vc" id="logo"><a class="navbar-brand" asp-area="" asp-controller="Home"
+                    asp-action="Index">LocadoraMols</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Logecad"
+                                asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Filme" asp-action="Index">Alugar</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Logecad"
+                                asp-action="Cadastro">Cadastro</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Logecad" asp-action="Cadastro">Cadastro</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Filme"
+                                asp-action="Index">Alugar</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Logecad" asp-action="Login">Login</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -52,4 +58,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

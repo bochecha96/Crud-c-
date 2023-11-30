@@ -28,16 +28,17 @@ namespace ProjetoLocadora.Repository
             return _bancoContext.Filmes.ToList();
         }
 
-        public FilmeModel buscarId(int id)
+        public FilmeModel BuscarId(int id)
         {
             return _bancoContext.Filmes.FirstOrDefault(x => x.Id == id);
         }
 
-        public FilmeModel atualizar(FilmeModel filme)
-        {
-            FilmeModel filmeDB = buscarId(filme.Id);
 
-            if (filmeDB == null) throw new Exception("Contato não foi encontrado.");
+        public FilmeModel Atualizar(FilmeModel filme)
+        {
+            FilmeModel filmeDB = BuscarId(filme.Id);
+
+            if (filmeDB == null) throw new Exception("Filme não foi encontrado.");
             filmeDB.Titulo = filme.Titulo;
             filmeDB.Sinopse = filme.Sinopse;
             filmeDB.Classificacao = filme.Classificacao;
@@ -48,14 +49,12 @@ namespace ProjetoLocadora.Repository
 
         }
 
-        public FilmeModel BuscarId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public FilmeModel Atualizar(FilmeModel filme)
-        {
-            throw new NotImplementedException();
+        public bool deletar(int id){
+            FilmeModel filmeDB = BuscarId(id);
+            if (filmeDB == null) throw new Exception("Filme não foi encontrado.");
+            _bancoContext.Filmes.Remove(filmeDB);
+            _bancoContext.SaveChanges();
+            return true;
         }
     }
 }
