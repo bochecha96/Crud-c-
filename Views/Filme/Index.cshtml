@@ -1,0 +1,46 @@
+@model List<FilmeModel>
+    
+@{
+    ViewData["Title"] = "Lista Filme";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem vindo</h1>
+    <p class="h5">Lista de filmes</p>
+</div>
+<div class="d-grid gap-2 d-md-block">
+    <a role="button" asp-controller="Filme" asp-action="Criar" class="btn btn-success">+ Adicionar Filme</a>
+</div>
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Sinopse</th>
+                <th scope="col">Classificacao</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            { var i = 0;
+                foreach (FilmeModel filme in Model)
+                { i++;
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@filme.Titulo</td>
+                        <td>@filme.Sinopse</td>
+                        <td>@filme.Classificacao</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <a role="button" asp-controller="Filme" asp-route-id="Id" asp-action="Editar" class="btn btn-primary">Editar</a>
+                                <a role="button" asp-controller="Filme" asp-action="ConfirmarDeletar" class="btn btn-danger">Remover</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

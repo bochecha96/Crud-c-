@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Apagar Filmes";
+}
+
+<div class="text-center">
+    <h3>Realmente deseja apagar o filme?</h3>
+
+    <a class="btn btn-primary" role="button" asp-controller="Filme" asp-action="Index"> Cancelar exclusão</a>
+    <a class="btn btn-danger" role="button" asp-controller="Filme" asp-action="Apagar"> Confirmar exclusão</a>
+</div>

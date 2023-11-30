@@ -1,0 +1,33 @@
+@model FilmeModel
+
+@{
+    ViewData["Title"] = "Editar Clientes";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar Cliente</h1>
+
+</div>
+
+<form>
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" placeholder="Digite o nome do Filme!">
+    </div>
+    <div class="form-group">
+        <label for="sinopse">Sinopse</label>
+        <input type="text" class="form-control" placeholder="Digite a sinopse do Filme!">
+    </div>
+    <div class="form-group">
+        <label for="Classificacao">Classificação Indicativa</label>
+        <input type="text" class="form-control" placeholder="Digite a classificação indicativa do Filme!">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary" asp-controller="Filme" asp-action="Index" role="button">Voltar</a>
+    <input type="hidden" asp-for="Id"/>
+</form>
+
+
